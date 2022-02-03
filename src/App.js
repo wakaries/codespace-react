@@ -30,13 +30,25 @@ function App() {
       <Login setToken={setToken}/>
       <p>{token}</p>
       <button onClick={entradas}>Entradas</button>
-{      <ul>
+      <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Slug</th>
+      <th>Titulo</th>
+    </tr>
+    </thead>
+    <tbody>
         {
-          todos.map(({titulo}, index) => (
-            <li>{titulo}</li>
+          todos.map(({id, slug, titulo}, index) => (
+            <tr>
+              <td>{id}</td>
+              <td>{slug}</td>
+              <td>{titulo}</td>              
+            </tr>
           ))
         }
-      </ul>}
+</tbody></table>
     </div>
  
   );
